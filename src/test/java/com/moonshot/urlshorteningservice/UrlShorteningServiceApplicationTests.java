@@ -1,4 +1,4 @@
-package com.moonshot.urlShorteningService;
+package com.moonshot.urlshorteningservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

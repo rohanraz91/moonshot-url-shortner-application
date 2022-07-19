@@ -30,7 +30,7 @@ redirected to original url.
 - Redirect to Original URL (via HTTP GET to `/{shortenedLink}`)
 
 ## Overview
-![Overview][Images/Overview_diagram.png]
+![Overview](Images/Overview_diagram.png)
 
 ## How to Run Program
 After following below steps, you can access the application by going on to http://localhost:8080/url-link

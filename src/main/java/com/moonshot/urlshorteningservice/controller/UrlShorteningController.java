@@ -1,11 +1,11 @@
-package com.moonshot.urlShorteningService.controller;
+package com.moonshot.urlshorteningservice.controller;
 
-import com.moonshot.urlShorteningService.datatransfer.UrlDto;
-import com.moonshot.urlShorteningService.datatransfer.UrlResponseDto;
-import com.moonshot.urlShorteningService.exception.ConnectionToDatabaseException;
-import com.moonshot.urlShorteningService.exception.UrlDoesNotExistException;
-import com.moonshot.urlShorteningService.model.Url;
-import com.moonshot.urlShorteningService.service.UrlService;
+import com.moonshot.urlshorteningservice.datatransfer.UrlDto;
+import com.moonshot.urlshorteningservice.datatransfer.UrlResponseDto;
+import com.moonshot.urlshorteningservice.exception.ConnectionToDatabaseException;
+import com.moonshot.urlshorteningservice.exception.UrlDoesNotExistException;
+import com.moonshot.urlshorteningservice.model.Url;
+import com.moonshot.urlshorteningservice.service.UrlService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;

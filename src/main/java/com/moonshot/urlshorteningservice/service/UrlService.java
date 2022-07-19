@@ -1,8 +1,7 @@
-package com.moonshot.urlShorteningService.service;
+package com.moonshot.urlshorteningservice.service;
 
-import com.moonshot.urlShorteningService.datatransfer.UrlDto;
-import com.moonshot.urlShorteningService.model.Url;
-import org.springframework.stereotype.Service;
+import com.moonshot.urlshorteningservice.datatransfer.UrlDto;
+import com.moonshot.urlshorteningservice.model.Url;
 
 import java.util.List;
 

@@ -1,13 +1,13 @@
 
 
-package com.moonshot.urlShorteningService.controller;
+package com.moonshot.urlshorteningservice.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.moonshot.urlShorteningService.exception.ConnectionToDatabaseException;
-import com.moonshot.urlShorteningService.exception.UrlDoesNotExistException;
-import com.moonshot.urlShorteningService.model.Url;
-import com.moonshot.urlShorteningService.service.UrlService;
-import com.moonshot.urlShorteningService.utils.UrlObjectUtils;
+import com.moonshot.urlshorteningservice.exception.ConnectionToDatabaseException;
+import com.moonshot.urlshorteningservice.exception.UrlDoesNotExistException;
+import com.moonshot.urlshorteningservice.model.Url;
+import com.moonshot.urlshorteningservice.service.UrlService;
+import com.moonshot.urlshorteningservice.utils.UrlObjectUtils;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;

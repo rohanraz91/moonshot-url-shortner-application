@@ -1,4 +1,4 @@
-package com.moonshot.urlShorteningService.datatransfer;
+package com.moonshot.urlshorteningservice.datatransfer;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

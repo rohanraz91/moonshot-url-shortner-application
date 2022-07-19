@@ -1,6 +1,6 @@
-package com.moonshot.urlShorteningService.utils;
+package com.moonshot.urlshorteningservice.utils;
 
-import com.moonshot.urlShorteningService.model.Url;
+import com.moonshot.urlshorteningservice.model.Url;
 
 import java.time.LocalDateTime;
 

@@ -1,11 +1,11 @@
-package com.moonshot.urlShorteningService.service;
+package com.moonshot.urlshorteningservice.service;
 
-import com.moonshot.urlShorteningService.exception.UrlNotProvidedException;
-import com.moonshot.urlShorteningService.repository.UrlRepository;
+import com.moonshot.urlshorteningservice.exception.UrlNotProvidedException;
+import com.moonshot.urlshorteningservice.repository.UrlRepository;
 import org.apache.commons.lang3.StringUtils;
 import com.google.common.hash.Hashing;
-import com.moonshot.urlShorteningService.datatransfer.UrlDto;
-import com.moonshot.urlShorteningService.model.Url;
+import com.moonshot.urlshorteningservice.datatransfer.UrlDto;
+import com.moonshot.urlshorteningservice.model.Url;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
