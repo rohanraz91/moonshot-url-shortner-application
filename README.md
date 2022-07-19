@@ -1,6 +1,6 @@
 # URL Shortener application
 
-This microservice creates a short url against a long url. Moreover, when user provides the created short url they get 
+This microservice creates a short url against a long url. Moreover, when user provides the created short url he gets 
 redirected to original url. 
 
 ## Table of Contents
