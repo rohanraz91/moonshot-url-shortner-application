@@ -1,0 +1,47 @@
+# Compiled source
+*.class
+*/bin/*
+
+# Eclipse files
+*.project
+*.classpath
+*.settings
+
+# Packages
+*.jar
+
+# Maven build files
+target
+reports
+helm-home/
+helm-target/
+.m2/
+
+
+# ARQ tests
+
+# PMD
+*.pmd
+
+#Generated files
+*.ser
+Attach
+Detach
+
+# Test files
+Attach
+Detach
+
+# Merge files
+*.orig
+
+# Archetype support files
+install_bob.sh
+run.sh
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+.attach_pid*

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+            name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <title>Thymeleaf Form handling Demo</title>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css"
+          rel="stylesheet">
+</head>
+<body class="container">
+<h1 class="py-5">Moonshot Url Shortner Application</h1>
+<form class="col card p-3 mb-5" method="post" th:action="@{/urlLink}" th:object="${urlDto}">
+    <div class="form-group">
+        <label for="url">Url</label>
+        <input class="form-control" id="url" placeholder="Enter URL" required
+               th:field="*{url}"
+               type="text"/>
+    </div>
+    <input class="btn btn-primary" type="submit" value="Create Short URL">
+</form>
+<table class="table table-striped table-bordered" th:object="${url}">
+    <tr>
+        <th>ID</th>
+        <th>Original Url</th>
+        <th>Short Link</th>
+        <th>Created At</th>
+    </tr>
+    <tr th:if="${#lists.isEmpty(urls)}">
+        <td colspan="4">No Records found. Add some...!</td>
+    </tr>
+    <tr th:each="url : ${urls}">
+        <td th:text="${url.id}"></td>
+        <td th:text="${url.userProvidedUrl}"></td>
+        <td th:text="${url.shortUrlLink}"></td>
+        <td th:text="${url.creationDate}"></td>
+    </tr>
+</table>
+</body>
+</html>
