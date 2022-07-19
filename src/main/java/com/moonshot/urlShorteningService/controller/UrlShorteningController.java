@@ -19,54 +19,44 @@ import java.util.List;
 @Controller
 public class UrlShorteningController {
 
+    private static final String ERROR_PROCESSING = "Error Processing Request, try after sometime";
+    private static final String URL_DOEST_NOT_EXIST = "Short Url does not exists";
     @Autowired
     private UrlService urlService;
 
-    @GetMapping("/urlLink")
+    @GetMapping("/url-link")
     public String getShortUrl(Model model) {
         List<Url> urls = urlService.getAllUrls();
         model.addAttribute("urls", urls);
         model.addAttribute("urlDto", new UrlDto());
         return "urls";
     }
-    @PostMapping("/urlLink")
+
+    @PostMapping("/url-link")
     public String postShortLink(/*Model model,*/ @ModelAttribute UrlDto urlDto){
         Url urlReturned = urlService.createShortLink(urlDto);
 
         if(null != urlReturned){
+            //Below can be used when we want to return ResponseEntity
             UrlResponseDto urlResponseDto = new UrlResponseDto();
             urlResponseDto.setUserProvidedUrl(urlReturned.getUserProvidedUrl());
             urlResponseDto.setShortUrlLink(urlReturned.getShortUrlLink());
             urlResponseDto.setExpiryDate(urlReturned.getExpiryDate());
-            return "redirect:/urlLink";
+            return "redirect:/url-link";
+            // return new ResponseEntity<UrlResponseDto>(urlResponseDto, HttpStatus.OK);
         }
-        throw new ConnectionToDatabaseException("Error Processing Request, try after sometime");
+        throw new ConnectionToDatabaseException(ERROR_PROCESSING);
     }
-
-    /*@PostMapping("/urlLink")
-    public ResponseEntity<?> postShortLink(@RequestBody UrlDto urlDto){
-        Url urlReturned = urlService.createShortLink(urlDto);
-
-        if(null != urlReturned){
-            UrlResponseDto urlResponseDto = new UrlResponseDto();
-            urlResponseDto.setUserProvidedUrl(urlReturned.getUserProvidedUrl());
-            urlResponseDto.setShortUrlLink(urlReturned.getShortUrlLink());
-            urlResponseDto.setExpiryDate(urlReturned.getExpiryDate());
-            return new ResponseEntity<UrlResponseDto>(urlResponseDto, HttpStatus.OK);
-        }
-        throw new ConnectionToDatabaseException("Error Processing Request, try after sometime");
-    }*/
 
     @GetMapping("/{shortenedLink}")
     public ResponseEntity<?> getOriginalUrl(@PathVariable String shortenedLink, HttpServletResponse response) throws IOException {
 
         Url originalUrl = urlService.getHashedUrl(shortenedLink);
         if(null == originalUrl){
-            throw new UrlDoesNotExistException("Short Url does not exists");
+            throw new UrlDoesNotExistException(URL_DOEST_NOT_EXIST);
         }else{
             response.sendRedirect(originalUrl.getUserProvidedUrl());
             return null;
         }
-
     }
 }

@@ -10,6 +10,6 @@ import lombok.NoArgsConstructor;
 public class UrlDto {
 
     private String url;
-    //Optional
+    //Additional field
     private String expiryDate;
 }

@@ -38,16 +38,6 @@ public class UrlServiceImpl implements UrlService {
         throw new UrlNotProvidedException("Url not provided by user");
     }
 
-    private LocalDateTime getExpiryDate(String expiryDate, LocalDateTime creationDate) {
-        if(StringUtils.isBlank(expiryDate)){
-            return creationDate.plusMinutes(2);
-        }else {
-            LocalDateTime expiryDateByUser = LocalDateTime.parse(expiryDate);
-            return expiryDateByUser;
-        }
-    }
-
-    //Algo to convert long url to short link
     private String hashUrl(String url) {
         String hashedUrl = "";
         //need to tackle same url request from user to append time
@@ -77,8 +67,18 @@ public class UrlServiceImpl implements UrlService {
         return urlRepo.findAll();
     }
 
+    //Below are optional methods (Future?)
     @Override
     public void deleteShortLink(Url url) {
         urlRepo.delete(url);
+    }
+
+    private LocalDateTime getExpiryDate(String expiryDate, LocalDateTime creationDate) {
+        if(StringUtils.isBlank(expiryDate)){
+            return creationDate.plusMinutes(2);
+        }else {
+            LocalDateTime expiryDateByUser = LocalDateTime.parse(expiryDate);
+            return expiryDateByUser;
+        }
     }
 }
