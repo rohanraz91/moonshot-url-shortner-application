@@ -15,7 +15,7 @@ redirected to original url.
   - [Jar Execution](#Jar Execution)
 ## Introduction
 
-- Introduced in MoonshotDemo Release 1.0.2
+- Introduced in Moonshot Demo Release 1.0.4-SNAPSHOT
 - Base URI: /url-link
 - Git Repo: <https://github.com/rohanraz91/moonshot-url-shortner-application.git>
 
