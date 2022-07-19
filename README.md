@@ -8,11 +8,12 @@ redirected to original url.
 - [Introduction](#introduction)
   - [Scope](#Scope)
   - [Exposed API](#exposed-api)
-- [Overview](#overview)
-- [How to Run Program](#How to Run Program)
+  - [Overview](#overview)
+- [How to Run Program](#How-to-Run-Program)
   - [Maven](#Maven)
-  - [Docker Image](#Docker Image)
-  - [Jar Execution](#Jar Execution)
+  - [Docker Image](#Docker-Image)
+  - [Jar Execution](#Jar-Execution)
+  
 ## Introduction
 
 - Introduced in Moonshot Demo Release 1.0.4-SNAPSHOT
